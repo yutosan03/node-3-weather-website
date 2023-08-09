@@ -12,7 +12,7 @@ const forecast = require('./utils/forecast')
 
 // publicDirectoryPathをvariableに保存して、その下のapp.useで呼び出す
 const app = express()
-
+const port = process.env.PORT || 3000
 
 // Define paths for Expre
 const publicDirectoryPath = path.join(__dirname, '../public')
@@ -137,6 +137,6 @@ app.get('*', (req, res) => {
     })
 })
 
-app.listen(3000, () => {
-    console.log('Server is up on port 3000.')
+app.listen(port, () => {
+    console.log('Server is up on port ' + port)
 })
